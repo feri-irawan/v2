@@ -1,4 +1,4 @@
-import { Box, chakra, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import CommunityCard from "../components/CommunityCard";
 import ContactForm from "../components/ContactForm";
 import { HorizontalDivide } from "../components/Divides";
@@ -14,7 +14,38 @@ import TextUnderline from "../components/TextUnderline";
 function HeroSection() {
   return (
     <chakra.section pt="3rem">
-      <SimpleGrid columns={2}>
+      {/* On Base */}
+      <Box display={{ base: "block", sm: "none" }}>
+        <Box m="0 auto" maxW="max-content">
+          <Text fontSize={20}>Hi, i am</Text>
+          <Text
+            fontSize={28}
+            fontWeight="bold"
+            w="max-content"
+            bgGradient="linear(90deg, #2CFF34 0%, #2C5AFF 82.34%)"
+            bgClip="text"
+          >
+            Feri Irawan
+          </Text>
+          <Box
+            m=".5rem 0 1rem"
+            boxSize={250}
+            bg="rgba(44, 255, 52, 0.05)"
+            bgImg="url('/images/feri-irawan.jpg')"
+            bgSize="cover"
+            border="1.5px solid #2CFF34"
+            rounded={8}
+            overflow="hidden"
+            pos="relative"
+          />
+        </Box>
+        <Text fontSize={18} pb="1rem" textAlign="center">
+          Making something to help lots of people
+        </Text>
+      </Box>
+
+      {/* On SM */}
+      <SimpleGrid display={{ base: "none", sm: "grid" }} columns={2} gap="1rem">
         <Box>
           <Text fontSize={20}>Hi, i am</Text>
           <Text
@@ -27,18 +58,13 @@ function HeroSection() {
           >
             Feri Irawan
           </Text>
-          <Text fontSize={18} fontWeight="bold" pb="1rem">
+          <Text fontSize={18} pb="4.5rem">
             Making something to help lots of people
           </Text>
         </Box>
-        <Box>
+        <Flex justify="end">
           <Box
-            ml="auto"
-            display="block"
-            w="full"
-            maxW={154}
-            h="full"
-            maxH={154}
+            boxSize="full"
             bg="rgba(44, 255, 52, 0.05)"
             bgImg="url('/images/feri-irawan.jpg')"
             bgSize="cover"
@@ -46,7 +72,7 @@ function HeroSection() {
             rounded={8}
             overflow="hidden"
           />
-        </Box>
+        </Flex>
       </SimpleGrid>
     </chakra.section>
   );
