@@ -1,4 +1,6 @@
 import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import CommunityCard from "../components/CommunityCard";
+import { HorizontalDivide } from "../components/Divides";
 
 import Layout from "../components/layout";
 import ProjectCard from "../components/ProjectCard";
@@ -96,6 +98,36 @@ function SkillsSection() {
   );
 }
 
+function CommunitySection() {
+  return (
+    <chakra.section>
+      <SectionTitle>Community</SectionTitle>
+
+      <SimpleGrid gap="2rem">
+        {[
+          [
+            "PinisiDev",
+            "",
+            "Komunitas IT pemuda pemudi Bulukumba",
+            "//github.com/PinisiDev",
+          ],
+          [
+            "Bellshade",
+            "",
+            "Komunitas untuk mengelola dan menulis kode untuk proyek pendidikan sumber terbuka Indonesia",
+            "//github.com/Bellshade",
+          ],
+        ].map((community, i, arr) => (
+          <>
+            <CommunityCard key={i} data={community} />
+            {i !== arr.length - 1 && <HorizontalDivide />}
+          </>
+        ))}
+      </SimpleGrid>
+    </chakra.section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
@@ -104,6 +136,7 @@ export default function Home() {
         <AboutSection />
         <ProjectsSection />
         <SkillsSection />
+        <CommunitySection />
       </SimpleGrid>
     </Layout>
   );
