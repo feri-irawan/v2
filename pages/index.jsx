@@ -1,6 +1,9 @@
-import { Box, Center, chakra, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 
 import Layout from "../components/layout";
+import SectionTitle from "../components/SectionTitle";
+import SocialMedia from "../components/SocialMedia";
+import TextUnderline from "../components/TextUnderline";
 
 function HeroSection() {
   return (
@@ -43,10 +46,26 @@ function HeroSection() {
   );
 }
 
+function AboutSection() {
+  return (
+    <chakra.section>
+      <SectionTitle>About Me</SectionTitle>
+      <chakra.p textAlign="center" mb="1.5rem">
+        A <TextUnderline>web developer</TextUnderline> who is still in high
+        school, has been in the computer world since 6th grade. Enjoy making
+        program code or applications that can be useful for many people.
+      </chakra.p>
+
+      <SocialMedia />
+    </chakra.section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
       <HeroSection />
+      <AboutSection />
     </Layout>
   );
 }
