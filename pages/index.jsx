@@ -1,6 +1,7 @@
 import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 
 import Layout from "../components/layout";
+import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
 import SocialMedia from "../components/SocialMedia";
 import TextUnderline from "../components/TextUnderline";
@@ -61,11 +62,27 @@ function AboutSection() {
   );
 }
 
+function ProjectsSection() {
+  return (
+    <chakra.section py="4rem">
+      <SectionTitle>Projects</SectionTitle>
+      <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
+        {Array(4)
+          .fill(0)
+          .map((items, i) => (
+            <ProjectCard key={i} reverse={i % 2} />
+          ))}
+      </SimpleGrid>
+    </chakra.section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
       <HeroSection />
       <AboutSection />
+      <ProjectsSection />
     </Layout>
   );
 }
