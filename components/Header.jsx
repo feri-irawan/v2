@@ -27,7 +27,12 @@ export default function Header() {
     <chakra.header
       display="flex"
       justifyContent="space-between"
-      p="1.5rem 1rem 0"
+      p="1.5rem 1rem"
+      pos="sticky"
+      top="0"
+      bg="#1E1E1ED9"
+      backdropFilter="blur(.5rem)"
+      zIndex={10}
     >
       {menus.map((name, i) => (
         <MenuItem name={name} key={i} />
