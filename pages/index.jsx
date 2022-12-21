@@ -3,12 +3,13 @@ import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import Layout from "../components/layout";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
+import SkillsContainer from "../components/SkillsContainer";
 import SocialMedia from "../components/SocialMedia";
 import TextUnderline from "../components/TextUnderline";
 
 function HeroSection() {
   return (
-    <chakra.section pt="3rem" pb="5rem">
+    <chakra.section pt="3rem">
       <SimpleGrid columns={2}>
         <Box>
           <Text fontSize={20}>Hi, i am</Text>
@@ -64,7 +65,7 @@ function AboutSection() {
 
 function ProjectsSection() {
   return (
-    <chakra.section py="4rem">
+    <chakra.section>
       <SectionTitle>Projects</SectionTitle>
       <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
         {Array(4)
@@ -77,12 +78,33 @@ function ProjectsSection() {
   );
 }
 
+function SkillsSection() {
+  return (
+    <chakra.section>
+      <SectionTitle>Skills</SectionTitle>
+      <SimpleGrid columns={2}>
+        {Array(2)
+          .fill({
+            categoryName: "Title",
+            items: Array(5).fill(["Skill title", ""]),
+          })
+          .map((category, i) => (
+            <SkillsContainer data={category} />
+          ))}
+      </SimpleGrid>
+    </chakra.section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
+      <SimpleGrid gap="8rem">
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <SkillsSection />
+      </SimpleGrid>
     </Layout>
   );
 }
