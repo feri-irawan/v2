@@ -53,7 +53,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <chakra.section>
+    <chakra.section id="about">
       <SectionTitle>About Me</SectionTitle>
       <chakra.p textAlign="center" mb="1.5rem">
         A <TextUnderline>web developer</TextUnderline> who is still in high
@@ -68,7 +68,7 @@ function AboutSection() {
 
 function ProjectsSection() {
   return (
-    <chakra.section>
+    <chakra.section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
         {Array(4)
@@ -83,7 +83,7 @@ function ProjectsSection() {
 
 function SkillsSection() {
   return (
-    <chakra.section>
+    <chakra.section id="skills">
       <SectionTitle>Skills</SectionTitle>
       <SimpleGrid columns={2}>
         {Array(2)
@@ -101,7 +101,7 @@ function SkillsSection() {
 
 function CommunitySection() {
   return (
-    <chakra.section>
+    <chakra.section id="community">
       <SectionTitle>Community</SectionTitle>
 
       <SimpleGrid gap="2rem">
@@ -131,7 +131,7 @@ function CommunitySection() {
 
 function ContactSection() {
   return (
-    <chakra.section>
+    <chakra.section id="contact">
       <SectionTitle>Contact Me</SectionTitle>
 
       <ContactForm />
