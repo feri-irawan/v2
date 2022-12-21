@@ -5,6 +5,7 @@ import { HorizontalDivide } from "../components/Divides";
 
 import Layout from "../components/layout";
 import ProjectCard from "../components/ProjectCard";
+import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
 import SkillsContainer from "../components/SkillsContainer";
 import SocialMedia from "../components/SocialMedia";
@@ -53,7 +54,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <chakra.section id="about">
+    <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <chakra.p textAlign="center" mb="1.5rem">
         A <TextUnderline>web developer</TextUnderline> who is still in high
@@ -62,13 +63,13 @@ function AboutSection() {
       </chakra.p>
 
       <SocialMedia />
-    </chakra.section>
+    </Section>
   );
 }
 
 function ProjectsSection() {
   return (
-    <chakra.section id="projects">
+    <Section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
         {Array(4)
@@ -77,13 +78,13 @@ function ProjectsSection() {
             <ProjectCard key={i} reverse={i % 2} />
           ))}
       </SimpleGrid>
-    </chakra.section>
+    </Section>
   );
 }
 
 function SkillsSection() {
   return (
-    <chakra.section id="skills">
+    <Section id="skills">
       <SectionTitle>Skills</SectionTitle>
       <SimpleGrid columns={2}>
         {Array(2)
@@ -95,13 +96,13 @@ function SkillsSection() {
             <SkillsContainer data={category} />
           ))}
       </SimpleGrid>
-    </chakra.section>
+    </Section>
   );
 }
 
 function CommunitySection() {
   return (
-    <chakra.section id="community">
+    <Section id="community">
       <SectionTitle>Community</SectionTitle>
 
       <SimpleGrid gap="2rem">
@@ -125,17 +126,17 @@ function CommunitySection() {
           </>
         ))}
       </SimpleGrid>
-    </chakra.section>
+    </Section>
   );
 }
 
 function ContactSection() {
   return (
-    <chakra.section id="contact">
+    <Section id="contact">
       <SectionTitle>Contact Me</SectionTitle>
 
       <ContactForm />
-    </chakra.section>
+    </Section>
   );
 }
 
