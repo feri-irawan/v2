@@ -1,5 +1,6 @@
-import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, chakra, SimpleGrid, Text } from "@chakra-ui/react";
 import CommunityCard from "../components/CommunityCard";
+import ContactForm from "../components/ContactForm";
 import { HorizontalDivide } from "../components/Divides";
 
 import Layout from "../components/layout";
@@ -128,6 +129,16 @@ function CommunitySection() {
   );
 }
 
+function ContactSection() {
+  return (
+    <chakra.section>
+      <SectionTitle>Contact Me</SectionTitle>
+
+      <ContactForm />
+    </chakra.section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
@@ -137,6 +148,7 @@ export default function Home() {
         <ProjectsSection />
         <SkillsSection />
         <CommunitySection />
+        <ContactSection />
       </SimpleGrid>
     </Layout>
   );
