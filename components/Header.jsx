@@ -24,7 +24,11 @@ function MenuItem({ name }) {
 
 export default function Header() {
   return (
-    <chakra.header display="flex" justifyContent="space-between" pt="1.5rem">
+    <chakra.header
+      display="flex"
+      justifyContent="space-between"
+      p="1.5rem 1rem 0"
+    >
       {menus.map((name, i) => (
         <MenuItem name={name} key={i} />
       ))}

@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inconsolata } from "@next/font/google";
 import Header from "./Header";
 import { Container } from "@chakra-ui/react";
+import Footer from "./Footer";
 
 const inconsolata = Inconsolata({ subsets: ["latin"] });
 
@@ -15,10 +16,11 @@ export default function Layout({ title, children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
-        <Header />
+      <Header />
+      <Container pb="4rem">
         <main>{children}</main>
       </Container>
+      <Footer />
     </div>
   );
 }
