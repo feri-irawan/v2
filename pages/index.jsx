@@ -134,13 +134,13 @@ function CommunitySection() {
         {[
           [
             "PinisiDev",
-            "",
+            "//dummyimage.com/400x400/1E1E1E/FFFFFF",
             "Komunitas IT pemuda pemudi Bulukumba",
             "//github.com/PinisiDev",
           ],
           [
             "Bellshade",
-            "",
+            "//dummyimage.com/400x400/1E1E1E/FFFFFF",
             "Komunitas untuk mengelola dan menulis kode untuk proyek pendidikan sumber terbuka Indonesia",
             "//github.com/Bellshade",
           ],

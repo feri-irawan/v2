@@ -4,17 +4,18 @@ export default function CommunityCard({ data }) {
   return (
     <Box textAlign="center">
       <Box
+        shadow="0 .5rem 2rem rgba(44, 255, 52, 0.1)"
         mx="auto"
         bgImg={`url(${data[1]})`}
-        bgSize="contain"
+        bgSize="cover"
         bgPos="center"
-        bgColor="#2CFF34"
+        bgColor="rgba(44, 255, 52, 0.15)"
         boxSize="3rem"
         rounded=".5rem"
         mb=".5rem"
       />
 
-      <chakra.h2 fontSize={20} fontWeight="bold">
+      <chakra.h2 fontSize={20} fontWeight="bold" color="#2CFF34">
         <chakra.a href={data[3]} target="_blank">
           {data[0]}
         </chakra.a>
