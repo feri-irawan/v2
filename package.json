@@ -20,6 +20,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.41.0",
     "react-icons": "^4.7.1",
+    "typed.js": "^2.0.12",
     "yup": "^0.32.11"
   }
 }

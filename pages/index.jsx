@@ -10,6 +10,7 @@ import SectionTitle from "../components/SectionTitle";
 import SkillsContainer from "../components/SkillsContainer";
 import SocialMedia from "../components/SocialMedia";
 import TextUnderline from "../components/TextUnderline";
+import TypedText from "../components/TypedText";
 
 function HeroSection() {
   return (
@@ -40,7 +41,14 @@ function HeroSection() {
           />
         </Box>
         <Text fontSize={18} pb="1rem" textAlign="center">
-          Making something to help lots of people
+          <TypedText
+            loop={true}
+            typeSpeed={100}
+            texts={[
+              "Making something to help lots of people",
+              "Tetap santuy walau error nggak mau ngalah",
+            ]}
+          />
         </Text>
       </Box>
 
@@ -58,13 +66,20 @@ function HeroSection() {
           >
             Feri Irawan
           </Text>
-          <Text fontSize={18} pb="4.5rem">
-            Making something to help lots of people
+          <Text fontSize={18}>
+            <TypedText
+              loop={true}
+              typeSpeed={100}
+              texts={[
+                "Making something to help lots of people",
+                "Tetap santuy walau error nggak mau ngalah",
+              ]}
+            />
           </Text>
         </Box>
         <Flex justify="end">
           <Box
-            boxSize="full"
+            boxSize={210}
             bg="rgba(44, 255, 52, 0.05)"
             bgImg="url('/images/feri-irawan.jpg')"
             bgSize="cover"
