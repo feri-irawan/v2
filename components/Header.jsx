@@ -1,4 +1,4 @@
-import { Box, chakra } from "@chakra-ui/react";
+import { Box, chakra, Container, Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -25,18 +25,22 @@ function MenuItem({ name }) {
 export default function Header() {
   return (
     <chakra.header
-      display="flex"
-      justifyContent="space-between"
-      p="1.5rem 1rem"
       pos="sticky"
       top="0"
       bg="#1E1E1ED9"
       backdropFilter="blur(.5rem)"
       zIndex={10}
     >
-      {menus.map((name, i) => (
-        <MenuItem name={name} key={i} />
-      ))}
+      <Container
+        maxW="lg"
+        p="1.5rem 1rem"
+        display="flex"
+        justifyContent="space-between"
+      >
+        {menus.map((name, i) => (
+          <MenuItem name={name} key={i} />
+        ))}
+      </Container>
     </chakra.header>
   );
 }
