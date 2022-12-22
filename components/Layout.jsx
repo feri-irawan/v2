@@ -3,10 +3,14 @@ import { Inconsolata } from "@next/font/google";
 import Header from "./Header";
 import { Container } from "@chakra-ui/react";
 import Footer from "./Footer";
+import { useEffect, useState } from "react";
 
 const inconsolata = Inconsolata({ subsets: ["latin"] });
 
 export default function Layout({ title, children }) {
+  const [domLoaded, setDomLoaded] = useState(false);
+  useEffect(() => setDomLoaded(true), []);
+
   return (
     <div className={inconsolata.className}>
       <Head>
@@ -16,11 +20,15 @@ export default function Layout({ title, children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <Container pb="4rem">
-        <main>{children}</main>
-      </Container>
-      <Footer />
+      {domLoaded && (
+        <>
+          <Header />
+          <Container pb="4rem">
+            <main>{children}</main>
+          </Container>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
