@@ -109,7 +109,7 @@ export default function ContactForm() {
           <RedStar />
         </chakra.label>
         <Box
-          p={{ base: ".1rem", sm: ".1rem .1rem .15rem .15rem" }}
+          p={{ base: ".1rem", sm: ".15rem .1rem .15rem .15rem" }}
           bgGradient="linear(135deg, #2CFF34 0%, #2C5AFF 100%)"
           rounded={8}
         >
