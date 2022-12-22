@@ -16,30 +16,29 @@ function HeroSection() {
   return (
     <chakra.section pt="3rem">
       {/* On Base */}
-      <Box display={{ base: "block", sm: "none" }}>
-        <Box m="0 auto" maxW="max-content">
-          <Text fontSize={20}>Hi, i am</Text>
-          <Text
-            fontSize={28}
-            fontWeight="bold"
-            w="max-content"
-            bgGradient="linear(90deg, #2CFF34 0%, #2C5AFF 82.34%)"
-            bgClip="text"
-          >
-            Feri Irawan
-          </Text>
-          <Box
-            m=".5rem 0 1rem"
-            boxSize={250}
-            bg="rgba(44, 255, 52, 0.05)"
-            bgImg="url('/images/feri-irawan.jpg')"
-            bgSize="cover"
-            border="1.5px solid #2CFF34"
-            rounded={8}
-            overflow="hidden"
-            pos="relative"
-          />
-        </Box>
+
+      <Box display={{ base: "block", sm: "none" }} m="0 auto" maxW={250}>
+        <Text fontSize={20}>Hi, i am</Text>
+        <Text
+          fontSize={28}
+          fontWeight="bold"
+          w="max-content"
+          bgGradient="linear(90deg, #2CFF34 0%, #2C5AFF 82.34%)"
+          bgClip="text"
+        >
+          Feri Irawan
+        </Text>
+        <Box
+          m=".5rem 0 1rem"
+          boxSize={250}
+          bg="rgba(44, 255, 52, 0.05)"
+          bgImg="url('/images/feri-irawan.jpg')"
+          bgSize="cover"
+          border="1.5px solid #2CFF34"
+          rounded={8}
+          overflow="hidden"
+          pos="relative"
+        />{" "}
         <Text fontSize={18} pb="1rem" textAlign="center">
           <TypedText
             loop={true}
