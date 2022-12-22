@@ -133,7 +133,7 @@ function SkillsSection() {
             items: Array(5).fill(["Skill title", ""]),
           })
           .map((category, i) => (
-            <SkillsContainer data={category} />
+            <SkillsContainer key={i} data={category} />
           ))}
       </SimpleGrid>
     </Section>
@@ -145,7 +145,7 @@ function CommunitySection() {
     <Section id="community">
       <SectionTitle>Community</SectionTitle>
 
-      <SimpleGrid gap="2rem">
+      <SimpleGrid>
         {[
           [
             "PinisiDev",
@@ -160,10 +160,10 @@ function CommunitySection() {
             "//github.com/Bellshade",
           ],
         ].map((community, i, arr) => (
-          <>
-            <CommunityCard key={i} data={community} />
-            {i !== arr.length - 1 && <HorizontalDivide />}
-          </>
+          <Box key={i}>
+            <CommunityCard data={community} />
+            {i !== arr.length - 1 && <HorizontalDivide my="2rem" />}
+          </Box>
         ))}
       </SimpleGrid>
     </Section>

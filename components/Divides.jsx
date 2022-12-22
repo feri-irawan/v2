@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
 
-export function HorizontalDivide() {
+export function HorizontalDivide(props) {
   return (
     <Box
+      {...props}
       mx="auto"
       h={1}
       w="50%"
