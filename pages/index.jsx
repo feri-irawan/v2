@@ -2,8 +2,7 @@ import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import CommunityCard from "../components/CommunityCard";
 import ContactForm from "../components/ContactForm";
 import { HorizontalDivide } from "../components/Divides";
-
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
 import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
