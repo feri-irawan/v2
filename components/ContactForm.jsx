@@ -51,19 +51,29 @@ export default function ContactForm() {
 
   return (
     <chakra.form onSubmit={handleSubmit(onSubmit)}>
-      <SimpleGrid columns={2} gap="1rem" mb="1rem">
+      <SimpleGrid columns={2} gap="1rem" mb=".5rem">
         <Box>
           <chakra.label htmlFor="inputName" ml=".2rem">
             Name
             <RedStar />
           </chakra.label>
-          <Input
-            {...register("name")}
-            id="inputName"
-            type="text"
-            borderColor="#2CFF34"
-            bg="#2CFF340D"
-          />
+          <Box
+            p={{ base: ".1rem", sm: ".1rem .1rem .15rem .15rem" }}
+            bgGradient="linear(135deg, #2CFF34 0%, #2C5AFF 100%)"
+            rounded={8}
+          >
+            <Box bgColor="#1E1E1E" rounded="inherit">
+              <Input
+                {...register("name")}
+                id="inputName"
+                type="text"
+                bg="#2CFF340D"
+                border="none"
+                borderColor="#2CFF34"
+                rounded="inherit"
+              />
+            </Box>
+          </Box>
           <ErrorMessage>{errors?.name?.message}</ErrorMessage>
         </Box>
 
@@ -72,13 +82,23 @@ export default function ContactForm() {
             Email
             <RedStar />
           </chakra.label>
-          <Input
-            {...register("email")}
-            id="inputEmail"
-            type="email"
-            borderColor="#2CFF34"
-            bg="#2CFF340D"
-          />
+          <Box
+            p={{ base: ".1rem", sm: ".1rem .1rem .15rem .15rem" }}
+            bgGradient="linear(135deg, #2CFF34 0%, #2C5AFF 100%)"
+            rounded={8}
+          >
+            <Box bgColor="#1E1E1E" rounded="inherit">
+              <Input
+                {...register("email")}
+                id="inputEmail"
+                type="email"
+                bg="#2CFF340D"
+                border="none"
+                borderColor="#2CFF34"
+                rounded="inherit"
+              />
+            </Box>
+          </Box>
           <ErrorMessage>{errors?.email?.message}</ErrorMessage>
         </Box>
       </SimpleGrid>
@@ -88,13 +108,24 @@ export default function ContactForm() {
           Message
           <RedStar />
         </chakra.label>
-        <Textarea
-          {...register("message")}
-          id="inputMessage"
-          borderColor="#2CFF34"
-          bg="#2CFF340D"
-          rows={7}
-        />
+        <Box
+          p={{ base: ".1rem", sm: ".1rem .1rem .15rem .15rem" }}
+          bgGradient="linear(135deg, #2CFF34 0%, #2C5AFF 100%)"
+          rounded={8}
+        >
+          <Box bgColor="#1E1E1E" rounded="inherit">
+            <Textarea
+              {...register("message")}
+              id="inputMessage"
+              bg="#2CFF340D"
+              rows={7}
+              border="none"
+              borderColor="#2CFF34"
+              rounded="inherit"
+              resize="none"
+            />
+          </Box>
+        </Box>
         <ErrorMessage>{errors?.message?.message}</ErrorMessage>
       </Box>
 
@@ -102,7 +133,7 @@ export default function ContactForm() {
         <Button
           type="submit"
           ml="auto"
-          bgGradient="linear(103deg, #2CFF34 0%, #2C5AFF 100%)"
+          bgGradient="linear(135deg, #2CFF34 0%, #2C5AFF 100%)"
           color="#000000"
           rounded="lg"
           px="1.2rem"
