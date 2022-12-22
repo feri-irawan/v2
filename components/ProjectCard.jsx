@@ -6,7 +6,7 @@ export default function ProjectCard({ data, reverse }) {
     <Flex
       display={{ base: "flex", sm: "block" }}
       flexDir={reverse && "row-reverse"}
-      mb="1rem"
+      justify={reverse && "space-between"}
     >
       <Box mb={{ sm: "1rem" }}>
         <Box
@@ -46,24 +46,46 @@ export default function ProjectCard({ data, reverse }) {
         pr={reverse && { base: "1rem", sm: 0 }}
       >
         <chakra.a
-          href={data?.url || "#"}
+          href={data?.html_url || "#"}
           target="_blank"
           color="#2CFF34"
           _hover={{ textDecor: "underline" }}
         >
           <chakra.h3
+            wordBreak="break-word"
             fontWeight="bold"
             fontSize={20}
             lineHeight="1.2rem"
             mb=".5rem"
           >
-            {data?.title}
+            {/* On Base */}
+            <chakra.span display={{ sm: "none" }}>
+              {data?.name?.length > 35
+                ? data?.name.slice(0, 35) + "..."
+                : data?.name}
+            </chakra.span>
+            {/* On SM */}
+            <chakra.span display={{ base: "none", sm: "block" }}>
+              {data?.name?.length > 39
+                ? data?.name.slice(0, 39) + "..."
+                : data?.name}
+            </chakra.span>
           </chakra.h3>
         </chakra.a>
-        <chakra.p lineHeight="1.1rem">
-          {data?.desc.length > 90
-            ? data?.desc.slice(0, 90) + "..."
-            : data?.desc}
+
+        <chakra.p lineHeight="1.1rem" wordBreak="break-word">
+          {/* On Base */}
+          <chakra.span display={{ sm: "none" }}>
+            {data?.description?.length > 93
+              ? data?.description.slice(0, 93) + "..."
+              : data?.description}
+          </chakra.span>
+          {/* On SM */}
+          <chakra.span display={{ base: "none", sm: "block" }}>
+            {data?.description?.length > 101
+              ? data?.description.slice(0, 101) + "..."
+              : data?.description}
+          </chakra.span>
         </chakra.p>
       </Box>
     </Flex>

@@ -1,4 +1,5 @@
 import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import CommunityCard from "../components/CommunityCard";
 import ContactForm from "../components/ContactForm";
 import { HorizontalDivide } from "../components/Divides";
@@ -88,20 +89,44 @@ function AboutSection() {
 }
 
 function ProjectsSection() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const getData = async () => {
+    setData();
+    setLoading(true);
+    setError(false);
+    await fetch("/api/projects")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setData(res);
+      })
+      .catch(() => setError(true));
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Section id="projects">
       <SectionTitle>Projects</SectionTitle>
-      <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
-        {Array(4)
-          .fill({
-            title: "Lorem ipsum dolor sit amet.",
-            image: "//dummyimage.com/400x400/1E1E1E/FFFFFF",
-            desc: "Lorem, ipsum dolor sit amet asadad adasdsadd asdasdasdasd asdasdadad consectetur adipisicing elit. Dolore, ratione!",
-            url: null,
-          })
-          .map((item, i) => (
-            <ProjectCard key={i} data={item} reverse={i % 2} />
-          ))}
+      <Text align="center">
+        {loading && "Sedang mengambil data..."}
+        {error && (
+          <>
+            Gagal mendapatkan data.{" "}
+            <chakra.span color="#2CFF34" onClick={getData}>
+              Coba lagi!
+            </chakra.span>
+          </>
+        )}
+      </Text>
+      <SimpleGrid mt="2rem" columns={{ sm: 2 }} gap="1.5rem">
+        {data && data.map((item, i) => <ProjectCard key={i} data={item} />)}
       </SimpleGrid>
     </Section>
   );

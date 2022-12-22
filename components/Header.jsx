@@ -1,7 +1,7 @@
 import { Box, chakra, Container, Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import { useEffect, useState } from "react";
 import TextUnderline from "./TextUnderline";
 
 const menus = ["About", "Projects", "Skills", "Community", "Contact"];
@@ -23,24 +23,31 @@ function MenuItem({ name }) {
 }
 
 export default function Header() {
+  const [domLoaded, setDomLoaded] = useState();
+  useEffect(() => {
+    setDomLoaded(true);
+  });
+
   return (
-    <chakra.header
-      pos="sticky"
-      top="0"
-      bg="#1E1E1ED9"
-      backdropFilter="blur(.5rem)"
-      zIndex={10}
-    >
-      <Container
-        maxW="lg"
-        p="1.5rem 1rem"
-        display="flex"
-        justifyContent="space-between"
+    domLoaded && (
+      <chakra.header
+        pos="sticky"
+        top="0"
+        bg="#1E1E1ED9"
+        backdropFilter="blur(.5rem)"
+        zIndex={10}
       >
-        {menus.map((name, i) => (
-          <MenuItem name={name} key={i} />
-        ))}
-      </Container>
-    </chakra.header>
+        <Container
+          maxW="lg"
+          p="1.5rem 1rem"
+          display="flex"
+          justifyContent="space-between"
+        >
+          {menus.map((name, i) => (
+            <MenuItem name={name} key={i} />
+          ))}
+        </Container>
+      </chakra.header>
+    )
   );
 }
