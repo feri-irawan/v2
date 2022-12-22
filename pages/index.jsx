@@ -2,6 +2,7 @@ import { Box, chakra, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import CommunityCard from "../components/CommunityCard";
 import ContactForm from "../components/ContactForm";
 import { HorizontalDivide } from "../components/Divides";
+import HeroImage from "../components/HeroImage";
 import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
 import Section from "../components/Section";
@@ -15,7 +16,6 @@ function HeroSection() {
   return (
     <chakra.section pt="3rem">
       {/* On Base */}
-
       <Box display={{ base: "block", sm: "none" }} m="0 auto" maxW={250}>
         <Text fontSize={20}>Hi, i am</Text>
         <Text
@@ -27,17 +27,7 @@ function HeroSection() {
         >
           Feri Irawan
         </Text>
-        <Box
-          m=".5rem 0 1rem"
-          boxSize={250}
-          bg="rgba(44, 255, 52, 0.05)"
-          bgImg="url('/images/feri-irawan.jpg')"
-          bgSize="cover"
-          border="1.5px solid #2CFF34"
-          rounded={8}
-          overflow="hidden"
-          pos="relative"
-        />{" "}
+        <HeroImage m=".5rem 0 1rem" />
         <Text fontSize={18} pb="1rem" textAlign="center">
           <TypedText
             loop={true}
@@ -55,12 +45,11 @@ function HeroSection() {
         <Box>
           <Text fontSize={20}>Hi, i am</Text>
           <Text
-            fontSize={28}
+            fontSize={35}
             fontWeight="bold"
             w="max-content"
             bgGradient="linear(90deg, #2CFF34 0%, #2C5AFF 82.34%)"
             bgClip="text"
-            mb="1rem"
           >
             Feri Irawan
           </Text>
@@ -76,15 +65,7 @@ function HeroSection() {
           </Text>
         </Box>
         <Flex justify="end">
-          <Box
-            boxSize={210}
-            bg="rgba(44, 255, 52, 0.05)"
-            bgImg="url('/images/feri-irawan.jpg')"
-            bgSize="cover"
-            border="1.5px solid #2CFF34"
-            rounded={8}
-            overflow="hidden"
-          />
+          <HeroImage boxSize={210} />
         </Flex>
       </SimpleGrid>
     </chakra.section>
