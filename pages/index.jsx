@@ -93,9 +93,14 @@ function ProjectsSection() {
       <SectionTitle>Projects</SectionTitle>
       <SimpleGrid columns={{ sm: 2 }} gap="1.5rem">
         {Array(4)
-          .fill(0)
-          .map((items, i) => (
-            <ProjectCard key={i} reverse={i % 2} />
+          .fill({
+            title: "Lorem ipsum dolor sit amet.",
+            image: "//dummyimage.com/400x400/1E1E1E/FFFFFF",
+            desc: "Lorem, ipsum dolor sit amet asadad adasdsadd asdasdasdasd asdasdadad consectetur adipisicing elit. Dolore, ratione!",
+            url: null,
+          })
+          .map((item, i) => (
+            <ProjectCard key={i} data={item} reverse={i % 2} />
           ))}
       </SimpleGrid>
     </Section>
