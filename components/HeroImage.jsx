@@ -9,13 +9,15 @@ export default function HeroImage(props) {
       boxSize={250}
       {...props}
     >
-      <Box
-        boxSize="calc(100% - .5rem)"
-        bgColor="rgba(44, 255, 52, 0.05)"
-        bgImg="url('/images/feri-irawan.jpg')"
-        bgSize="cover"
-        rounded={5}
-      />
+      <Box bgColor="#1E1E1E" rounded="inherit" boxSize="calc(100% - .5rem)">
+        <Box
+          boxSize="full"
+          bgColor="rgba(44, 255, 52, 0.05)"
+          bgImg="url('/images/feri-irawan.jpg')"
+          bgSize="cover"
+          rounded={5}
+        />
+      </Box>
     </Center>
   );
 }

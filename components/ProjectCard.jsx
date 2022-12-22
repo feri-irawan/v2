@@ -19,14 +19,16 @@ export default function ProjectCard({ data, reverse }) {
           p={{ base: ".2rem", sm: ".3rem" }}
           pl={{ sm: ".35rem" }}
         >
-          <Box
-            boxSize="full"
-            bgColor="#1E1E1E"
-            bgImg={`url('${data?.image}')`}
-            bgSize="cover"
-            bgPos="center"
-            rounded="inherit"
-          />
+          <Box bgColor="#1E1E1E" rounded="inherit" boxSize="full">
+            <Box
+              boxSize="full"
+              bgColor="rgba(44, 255, 52, 0.05)"
+              bgImg={`url('${data?.image}')`}
+              bgSize="cover"
+              bgPos="center"
+              rounded="inherit"
+            />
+          </Box>
           <chakra.a
             pos="absolute"
             right={{ base: ".5rem", sm: ".8rem" }}
