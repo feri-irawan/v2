@@ -7,9 +7,10 @@ function SkillItem({ data }) {
         bgImg={`url(${data[1]})`}
         bgSize="contain"
         bgPos="center"
-        bgColor="#2CFF340D"
+        bgRepeat="no-repeat"
+        bgColor={!data[1] && "#2CFF340D"}
         boxSize={25}
-        rounded=".5rem"
+        rounded={!data[1] && ".5rem"}
       />
       <Text
         ml=".5rem"
@@ -28,7 +29,7 @@ export default function SkillsContainer({ data }) {
   const { categoryName, items } = data;
 
   return (
-    <Box>
+    <Box mx={{ sm: "auto" }}>
       <chakra.h2 fontSize={20} fontWeight="bold">
         {categoryName}
       </chakra.h2>

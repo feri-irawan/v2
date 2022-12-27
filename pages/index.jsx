@@ -136,15 +136,106 @@ function SkillsSection() {
   return (
     <Section id="skills">
       <SectionTitle>Skills</SectionTitle>
-      <SimpleGrid columns={2}>
-        {Array(2)
-          .fill({
-            categoryName: "Title",
-            items: Array(5).fill(["Skill title", ""]),
-          })
-          .map((category, i) => (
-            <SkillsContainer key={i} data={category} />
-          ))}
+      <SimpleGrid columns={{ base: 2, sm: 3 }} gap=".5rem">
+        {[
+          {
+            categoryName: "",
+            items: [
+              [
+                "HTML5",
+                "https://static-00.iconduck.com/assets.00/file-type-html-icon-226x256-lud8fl1p.png",
+              ],
+              [
+                "CSS3",
+                "https://static-00.iconduck.com/assets.00/file-type-css-icon-226x256-ytqdyr76.png",
+              ],
+              [
+                "SASS",
+                "https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png",
+              ],
+              [
+                "JavaScript",
+                "https://static-00.iconduck.com/assets.00/javascript-icon-256x256-8sn98o22.png",
+              ],
+              [
+                "Bootstrap",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/250px-Bootstrap_logo.svg.png",
+              ],
+              [
+                "Tailwind",
+                "https://static-00.iconduck.com/assets.00/tailwind-css-icon-256x154-bhw4dmbr.png",
+              ],
+              [
+                "Chakra UI",
+                "https://camo.githubusercontent.com/eec63163a5209f78e8b0e3d6ab82eb981d03c4453a7a466f4fdc063da09f2a4d/68747470733a2f2f692e696d6775722e636f6d2f454d796b5a62332e706e67",
+              ],
+            ],
+          },
+          {
+            categoryName: "",
+            items: [
+              [
+                "Node.JS",
+                "https://static-00.iconduck.com/assets.00/nodejs-original-icon-226x256-b4xset3r.png",
+              ],
+              [
+                "Next.JS",
+                "https://www.datocms-assets.com/75941/1657707878-nextjs_logo.png",
+              ],
+              [
+                "PHP",
+                "https://static-00.iconduck.com/assets.00/php-original-icon-256x135-m9j2mnet.png",
+              ],
+              [
+                "Express",
+                "https://santrikoding.com/storage/categories/wQVS3Ru4M9BqZIQlQZc0q3NZDJOLjla9QWw61JVx.png",
+              ],
+              [
+                "Fastify",
+                "https://avatars.githubusercontent.com/u/24939410?s=100&v=4",
+              ],
+              [
+                "TypeScript",
+                "https://static-00.iconduck.com/assets.00/typescript-icon-icon-256x256-ohttv0b8.png",
+              ],
+            ],
+          },
+          {
+            categoryName: "",
+            items: [
+              [
+                "Github",
+                "https://static-00.iconduck.com/assets.00/github-icon-256x249-eb1fu3cu.png",
+              ],
+              [
+                "Git",
+                "https://static-00.iconduck.com/assets.00/git-icon-256x256-nki51ae3.png",
+              ],
+              [
+                "NPM",
+                "https://static-00.iconduck.com/assets.00/npm-icon-256x256-3sbhpy7x.png",
+              ],
+              [
+                "Postman",
+                "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png",
+              ],
+              [
+                "Visual Studio Code",
+                "https://static-00.iconduck.com/assets.00/file-type-vscode-icon-256x254-n2qz4hp8.png",
+              ],
+              [
+                "Sublime Text",
+                "https://www.sublimehq.com/images/sublime_text.png",
+              ],
+              [
+                "Figma",
+                "https://static-00.iconduck.com/assets.00/figma-icon-171x256-cm2xsty6.png",
+              ],
+            ],
+          },
+        ].map((category, i) => (
+          <SkillsContainer key={i} data={category} />
+        ))}
       </SimpleGrid>
     </Section>
   );
