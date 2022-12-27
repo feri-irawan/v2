@@ -250,13 +250,13 @@ function CommunitySection() {
         {[
           [
             "PinisiDev",
-            null,
+            "https://pinisidev.vercel.app/images/pinisidev.png",
             "Komunitas IT pemuda pemudi Bulukumba",
             "//github.com/PinisiDev",
           ],
           [
             "Bellshade",
-            null,
+            "https://avatars.githubusercontent.com/u/76999048?s=200&v=4",
             "Komunitas untuk mengelola dan menulis kode untuk proyek pendidikan sumber terbuka Indonesia",
             "//github.com/Bellshade",
           ],

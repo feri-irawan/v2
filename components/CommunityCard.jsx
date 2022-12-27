@@ -9,7 +9,8 @@ export default function CommunityCard({ data }) {
         bgImg={`url(${data[1]})`}
         bgSize="cover"
         bgPos="center"
-        bgColor="rgba(44, 255, 52, 0.15)"
+        bgRepeat="no-repeat"
+        bgColor={!data[1] && "rgba(44, 255, 52, 0.15)"}
         boxSize="3rem"
         rounded=".5rem"
         mb=".5rem"
