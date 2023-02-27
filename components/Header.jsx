@@ -1,14 +1,21 @@
-import { Box, chakra, Container, Flex } from "@chakra-ui/react";
+import { Box, chakra, Container } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import TextUnderline from "./TextUnderline";
 
-const menus = ["About", "Projects", "Skills", "Community", "Contact"];
+const menus = [
+  { name: "Home", url: "/" },
+  { name: "Posts", url: "/posts" },
+  { name: "About", url: "/#about" },
+  { name: "Projects", url: "/#projects" },
+  { name: "Skills", url: "/#skilss" },
+  { name: "Community", url: "/#community" },
+  { name: "Contact", url: "/#contact" },
+];
 
-function MenuItem({ name }) {
-  const route = useRouter().asPath.slice(1);
-  const url = "#" + name.toLowerCase();
+function MenuItem({ name, url }) {
+  const route = useRouter().asPath;
 
   return (
     <Link href={url}>
@@ -38,13 +45,15 @@ export default function Header() {
         zIndex={10}
       >
         <Container
-          maxW="lg"
+          maxW="xl"
           p="1.5rem 1rem"
           display="flex"
           justifyContent="space-between"
+          overflowX="auto"
+          gap="2rem"
         >
-          {menus.map((name, i) => (
-            <MenuItem name={name} key={i} />
+          {menus.map((item, i) => (
+            <MenuItem key={i} {...item} />
           ))}
         </Container>
       </chakra.header>
