@@ -12,6 +12,7 @@ import SkillsContainer from "../components/SkillsContainer";
 import SocialMedia from "../components/SocialMedia";
 import TextUnderline from "../components/TextUnderline";
 import TypedText from "../components/TypedText";
+import { motion } from "framer-motion";
 
 function HeroSection() {
   return (
@@ -284,7 +285,22 @@ function ContactSection() {
 export default function Home() {
   return (
     <Layout title="Hi, i am Feri Irawan 👋🏻">
-      <SimpleGrid gap="8rem">
+      <SimpleGrid
+        gap="8rem"
+        as={motion.div}
+        initial={{
+          filter: "blur(2rem)",
+          opacity: 0,
+          scale: 0,
+          translateY: "100%",
+        }}
+        animate={{
+          opacity: 1,
+          filter: ["blur(2rem)", "blur(2rem)", "blur(0)"],
+          scale: [0, 1.1, 1],
+          translateY: ["100%", "0%", "0%"],
+        }}
+      >
         <HeroSection />
         <AboutSection />
         <ProjectsSection />

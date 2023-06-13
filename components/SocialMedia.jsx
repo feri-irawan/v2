@@ -1,4 +1,5 @@
 import { Box, chakra } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import {
   FaDiscord,
   FaGithub,
@@ -15,6 +16,8 @@ function SocialMediaItem({ data }) {
       target="_blank"
       m=".8rem"
       display="inline-block"
+      as={motion.a}
+      whileHover={{ color: "#2CFF34", rotate: [0, 20, 0] }}
     >
       {data[2]}
     </chakra.a>

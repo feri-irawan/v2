@@ -9,7 +9,7 @@ const menus = [
   { name: "Posts", url: "/posts" },
   { name: "About", url: "/#about" },
   { name: "Projects", url: "/#projects" },
-  { name: "Skills", url: "/#skilss" },
+  { name: "Skills", url: "/#skills" },
   { name: "Community", url: "/#community" },
   { name: "Contact", url: "/#contact" },
 ];
